@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+<!--
+
+RuneScape Gold Quest v0.1
+
+TO DO LIST
+-Add statistics page
+-Change worker gold values
+-Add upgrades/research facility
+-Add save system
+-Add levelling system
+
+
+-->
+
+
+
+<div class="container">
+	<h1>RuneScape Gold Quest <small>An Incremental Game v0.1</small></h1>
+
+	<button id="collect_gold" type="button" onclick="get_gold(1)" class="btn btn-primary btn-lg btn-block">COLLECT GOLD</button>
+	<hr>
+
+	Gold: <span id="player_gold">0</span>
+	<br>Gold Per Second <span id="gold_per_second">0</span>
+
+	<h3>Workers</h3>
+
+		<table class="table">
+	<tr>
+		<td>Flax Collector
+			<br>You Own: <span id="flax_collector_count">0</span>
+			<br>Costs: <span id="flax_collector_cost">25</span> gold
+			<br>Gold Per Second: <span id="flax_collector_gold">1</span>
+		</td>
+		<td>
+			<button onclick="buy_flax_collector()" class="btn btn-success">Buy</button>
+		</td>
+	</tr>
+
+	<tr>
+		<td>Lobster Fisher
+			<br>You Own: <span id="lobster_fisher_count">0</span>
+			<br>Costs: <span id="lobster_fisher_cost">175</span> gold
+			<br>Gold Per Second: <span id="lobster_fisher_gold">5</span>
+		</td>
+		<td>
+			<button onclick="buy_lobster_fisher()" class="btn btn-success">Buy</button>
+		</td>
+	</tr>
+
+	<tr>
+		<td>Pure Essence Miner
+			<br>You Own: <span id="pure_essence_miner_count">0</span>
+			<br>Costs: <span id="pure_essence_miner_cost">1225</span> gold
+			<br>Gold Per Second: <span id="pure_essence_miner_gold">25</span>
+		</td>
+		<td>
+			<button onclick="buy_pure_essence_miner()" class="btn btn-success">Buy</button>
+		</td>
+	</tr>
+
+	<tr>
+		<td>Yew Chopper
+			<br>You Own: <span id="yew_chopper_count">0</span>
+			<br>Costs: <span id="yew_chopper_cost">8575</span> gold
+			<br>Gold Per Second: <span id="yew_chopper_gold">125</span>
+		</td>
+		<td>
+			<button onclick="buy_yew_chopper()" class="btn btn-success">Buy</button>
+		</td>
+	</tr>
+
+	<tr>
+		<td>Runite Ore Miner
+			<br>You Own: <span id="runite_ore_miner_count">0</span>
+			<br>Costs: <span id="runite_ore_miner_cost">60025</span> gold
+			<br>Gold Per Second: <span id="runite_ore_miner_gold">625</span>
+		</td>
+		<td>
+			<button onclick="buy_runite_ore_miner()" class="btn btn-success">Buy</button>
+		</td>
+	</tr>
+
+	<tr>
+		<td>Frost Dragon Slayer
+			<br>You Own: <span id="frost_dragon_slayer_count">0</span>
+			<br>Costs: <span id="frost_dragon_slayer_cost">420175</span> gold
+			<br>Gold Per Second: <span id="frost_dragon_slayer_gold">3125</span>
+		</td>
+		<td>
+			<button onclick="buy_frost_dragon_slayer()" class="btn btn-success">Buy</button>
+		</td>
+	</tr>
+
+	<tr>
+		<td>Merchanter
+			<br>You Own: <span id="merchanter_count">0</span>
+			<br>Costs: <span id="merchanter_cost">2941225</span> gold
+			<br>Gold Per Second: <span id="merchanter_gold">15625</span>
+		</td>
+		<td>
+			<button onclick="buy_merchanter()" class="btn btn-success">Buy</button>
+		</td>
+	</tr>
+
+	<tr>
+		<td>PvM Clan
+			<br>You Own: <span id="pvm_clan_count">0</span>
+			<br>Costs: <span id="pvm_clan_cost">17647350</span> gold
+			<br>Gold Per Second: <span id="pvm_clan_gold">78125</span>
+		</td>
+		<td>
+			<button onclick="buy_pvm_clan()" class="btn btn-success">Buy</button>
+		</td>
+	</tr>
+
+	<tr>
+		<td>Dicer
+			<br>You Own: <span id="dicer_count">0</span>
+			<br>Costs: <span id="dicer_cost">105884100</span> gold
+			<br>Gold Per Second: <span id="dicer_gold">390625</span>
+		</td>
+		<td>
+			<button onclick="buy_dicer()" class="btn btn-success">Buy</button>
+		</td>
+	</tr>
+	</table>
+
+	</div>
+</div>
+
+
+            
+<script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.js"></script>
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="base_v0.1.js"></script>
+            
+        </body>
+                </html>
