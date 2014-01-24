@@ -1,9 +1,8 @@
-jQuery(document).ready(function ($) {
-    $('.nav-tabs a').click(function (e) {
-      e.preventDefault();
-      $(this).tab('show');
-    });
-});
+$('[data-toggle=tab]').click(function(){
+  if ($(this).parent().hasClass('active')){
+	$($(this).attr("href")).toggleClass('active');
+  }
+})
 
 //variables
 
