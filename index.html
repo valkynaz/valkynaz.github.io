@@ -1,200 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    </head>
-	<body nowrap>
+<html>
+<body>
 
-<script src="base_v0.2.js" type="text/javascript"></script>
+<form id="submitTask" action="" method="post">
 
-  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
-      <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.js"></script>
+	Slayer Master:
+	<select id="selectedMaster">
+		<option value="" selected>-</option>
+		<option value="Turael">Turael</option>
+		<option value="Mazchna">Mazchna</option>
+		<option value="Vannaka">Vannaka</option>
+		<option value="Chaeldar">Chaeldar</option>
+		<option value="Nieve/Steve">Nieve/Steve</option>
+		<option value="Duradel">Duradel</option>
+	</select>
+	<br>
+	<br>
+
+	Assigned Task:
+	<select id="selectedTask">
+		<option value="" selected>-</option>
+		<option value="Hellhounds">Hellhounds</option>
+		<option value="Greater Demons">Greater Demons</option>
+		<option value="Fire Giants">Fire Giants</option>
+	</select>
+	<br>
+	<br>
 	
-<!--
+	Assigned Amount:
+	<input id="selectedTaskCount" type="number" name="quantity" min="0" max="299" value="0">
+	<br>
+	<br>
 
-RuneScape Gold Quest v0.2
-
-TO DO LIST
--Add statistics page
--Change worker gold values
--Add upgrades/research facility
--Add save system
--Add levelling system
-
-code will be cleaned up ASAP i promise!
-
-
--->
-
-
-
-<div class="container">
-    <h1><img src="http://static3.wikia.nocookie.net/__cb20130508144161/runescape/images/3/3d/RuneScape_3_Logo.png" width="300" height="96">Gold Quest <small>An Incremental Game v<span id="game_version"></span></small></h1>
-
-        <center><img src="http://i.imgur.com/b30LGck.png" width="283" height="200" onclick="get_gold(1)"></center>
-	<hr>
-
-	<img src="http://i.imgur.com/J6WGPHR.png">Gold: <span id="player_gold">0.00</span>
-	<br><img src="http://i.imgur.com/J6WGPHR.png">Gold Per Second <span id="gold_per_second">0.00</span>
-	<hr>
+	<button id="submitTaskButton" type="button" onclick="validate()">Submit Task</button>
 	
-	<div class="tabbable">
-		<ul class="nav nav-tabs">
-			<li class="active"><a href="#workers" data-toggle="tab">Workers</a></li>
-			<li><a href="#upgrades" data-toggle="tab">Upgrades</a></li>
-			<li><a href="#statistics" data-toggle="tab">Statistics</a></li>
-			<li><a href="#gameinfo" data-toggle="tab">Game Info</a></li>
-		</ul>
+</form>
+<br>
+<br>
 
-   <div class="tab-content">
-      <div class="tab-pane active" id="workers">
+<u>Current Task:</u><br><br>
 
-	<table class="table">
-	<tr>
-		<td><img src="http://i.imgur.com/fsvwFvv.png" align="left">Flax Collector
-			<br>You Own: <span id="flax_collector_count">0</span>
-			<br>Costs: <span id="flax_collector_cost">25</span> gold
-			<br>Gold Per Second: <span id="flax_collector_gold">1</span>
-		</td>
-		<td>
-			<button onclick="buy_flax_collector()" class="btn btn-success">Buy</button>
-		</td>
-	</tr>
+<span id="assignedTaskCount">No Task Entered.</span> <span id="assignedTask"></span><br><br>
 
-	<tr>
-		<td><img src="http://i.imgur.com/Mxdx2gH.png" align="left">Lobster Fisher
-			<br>You Own: <span id="lobster_fisher_count">0</span>
-			<br>Costs: <span id="lobster_fisher_cost">175</span> gold
-			<br>Gold Per Second: <span id="lobster_fisher_gold">5</span>
-		</td>
-		<td>
-			<button onclick="buy_lobster_fisher()" class="btn btn-success">Buy</button>
-		</td>
-	</tr>
+From Slayer Master: <span id="slayerMaster"></span><br><br>
 
-	<tr>
-		<td><img src="http://i.imgur.com/G33iqXR.png" align="left">Pure Essence Miner
-			<br>You Own: <span id="pure_essence_miner_count">0</span>
-			<br>Costs: <span id="pure_essence_miner_cost">1225</span> gold
-			<br>Gold Per Second: <span id="pure_essence_miner_gold">25</span>
-		</td>
-		<td>
-			<button onclick="buy_pure_essence_miner()" class="btn btn-success">Buy</button>
-		</td>
-	</tr>
+<u>Slayer Master Task Count:</u><br><br>
+Turael: <span id="turaelTaskCount">0</span><br>
+Mazchna: <span id="mazchnaTaskCount">0</span><br>
+Vannaka: <span id="vannakaTaskCount">0</span><br>
+Chaeldar: <span id="chaeldarTaskCount">0</span><br>
+Nieve/Steve: <span id="nievesteveTaskCount">0</span><br>
+Duradel: <span id="duradelTaskCount">0</span><br><br>
 
-	<tr>
-		<td><img src="http://i.imgur.com/cBv7rm9.png" align="left">Yew Chopper
-			<br>You Own: <span id="yew_chopper_count">0</span>
-			<br>Costs: <span id="yew_chopper_cost">8575</span> gold
-			<br>Gold Per Second: <span id="yew_chopper_gold">125</span>
-		</td>
-		<td>
-			<button onclick="buy_yew_chopper()" class="btn btn-success">Buy</button>
-		</td>
-	</tr>
+<u>Slayer Monster Task/Kill Count</u><br><br>
+Hellhound Task Count: <span id="hellhoundTaskCount">0</span><br>
+Hellhound Kill Count: <span id="hellhoundKillCount">0</span><br>
+Greater Demon Task Count: <span id="greaterdemonTaskCount">0</span><br>
+Greater Demon Kill Count: <span id="greaterdemonKillCount">0</span><br>
+Fire Giant Task Count: <span id="firegiantTaskCount">0</span><br>
+Fire Giant Kill Count: <span id="firegiantKillCount">0</span><br>
 
-	<tr>
-		<td><img src="http://i.imgur.com/d3B4J05.png" align="left">Runite Ore Miner
-			<br>You Own: <span id="runite_ore_miner_count">0</span>
-			<br>Costs: <span id="runite_ore_miner_cost">60025</span> gold
-			<br>Gold Per Second: <span id="runite_ore_miner_gold">625</span>
-		</td>
-		<td>
-			<button onclick="buy_runite_ore_miner()" class="btn btn-success">Buy</button>
-		</td>
-	</tr>
+<script>
+$(window).load(function() {
+$('form').children('input:not(#submit)').val('')
+}
 
-	<tr>
-        
-		<td><img src="http://static4.wikia.nocookie.net/__cb20111110051041/runescape/images/5/56/Frost_dragon.png" height="88" width="119" align="left">Frost Dragon Slayer
-			<br>You Own: <span id="frost_dragon_slayer_count">0</span>
-			<br>Costs: <span id="frost_dragon_slayer_cost">420175</span> gold
-			<br>Gold Per Second: <span id="frost_dragon_slayer_gold">3125</span>
-		
-		<td>
-			<button onclick="buy_frost_dragon_slayer()" class="btn btn-success">Buy</button>
-		</td>
-	</tr>
+</script>
 
-	<tr>
-		<td><img src="http://i.imgur.com/okKqWfT.png" align="left">Merchanter
-			<br>You Own: <span id="merchanter_count">0</span>
-			<br>Costs: <span id="merchanter_cost">2941225</span> gold
-			<br>Gold Per Second: <span id="merchanter_gold">15625</span>
-		</td>
-		<td>
-			<button onclick="buy_merchanter()" class="btn btn-success">Buy</button>
-		</td>
-	</tr>
-
-	<tr>
-		<td><img src="http://i.imgur.com/MwTpMNg.png" align="left">PvM Clan
-			<br>You Own: <span id="pvm_clan_count">0</span>
-			<br>Costs: <span id="pvm_clan_cost">17647350</span> gold
-			<br>Gold Per Second: <span id="pvm_clan_gold">78125</span>
-		</td>
-		<td>
-			<button onclick="buy_pvm_clan()" class="btn btn-success">Buy</button>
-		</td>
-	</tr>
-
-	<tr>
-		<td><img src="http://i.imgur.com/FgBL8vp.png" align="left">Dicer
-			<br>You Own: <span id="dicer_count">0</span>
-			<br>Costs: <span id="dicer_cost">105884100</span> gold
-			<br>Gold Per Second: <span id="dicer_gold">390625</span>
-		</td>
-		<td>
-			<button onclick="buy_dicer()" class="btn btn-success">Buy</button>
-		</td>
-	</tr>
-	</table>
-
-	</div>
-	
-	<div class="tab-pane" id="upgrades">
-		<p>Coming soon...</p>
-	</div>
-     
-	<div class="tab-pane" id="statistics">
-		<p>Coming soon...</p>
-	</div>
-	
-	<div class="tab-pane" id="gameinfo">
-		
-	<h1>Changelog<h1>
-        
-        <h3>Next Update</h3>
-        <ul>
-            <li>Basic upgrade system</li>
-            <li>Implement statistics tab</li>
-        </ul>
-	
-	<h3>Version 0.2 - 23/01/2013</h3>
-	<ul>
-	<li>Added togglable tabs (Workers, Upgrades, Statistics, Game Info).</li>
-	<li>Collect Gold button replaced with clickable gold stack image.</li>
-	<li>Icons for workers.</li>
-	
-	</ul>
-	
-	<h3>Version 0.1 - 21/01/2013</h3>
-	<ul>
-	<li>Base game released</li>
-	</ul>
-
-	
-	
-	</div>
-	
-</div>
-</div>
-</div>
-
-
-            
-
-            
-        </body>
-                </html>
+<script src="base.js"></script>
+</body>
+</html>
