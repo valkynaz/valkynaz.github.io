@@ -138,6 +138,11 @@ function load_stats() {
     update_view();
 }
 
+function reset_stats(){
+localStorage.removeItem('slayerlogsave');
+update_view();
+}
+
 function submit_task(){
 
 	user.assigned_slayer_master = document.getElementById("selectedMaster").value;
