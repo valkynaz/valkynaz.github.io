@@ -1,213 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>OSRS Slayer Log</title>
 </head>
-<body onload="load_stats()">
-<script src="base.js"></script>
+<script type="text/javascript" src="base.js"></script>
+<body onLoad="load_game()">
+<script type="text/javascript" src="base.js"></script>
 <center>
-
-<!--
-
-Created by Valkynaz 18/08/2016
-
-This is an experiment/project to develop my limited programming knowledge and to also create
-a useful tool for myself while playing oldschool RuneScape.
-
--->
-
-<img src="oldschoollogo.gif"></img>
-<hr>
-<h1>OSRS Slayer Log</</h1>
-<h4>By Valkynaz/Valkyze</h4>
-<h4>Version: 0.1</h4>
-
-<form id="submitTask" action="" method="post">
-
-	Slayer Master:
-	<select id="selectedMaster" name="selectedMaster">
-		<option value="0" selected>-</option>
-		<option value="Nieve/Steve">Nieve/Steve</option>
-	</select>
-	<br>
-	<br>
-
-	Assigned Task:
-	<select id="selectedTask" name="selectedTask">
-		<option value="0" selected><b>-	</b></option>
-		<option value="Aberrant Spectre">Aberrant Spectre</option>
-		<option value="Abyssal Demon">Abyssal Demon</option>
-		<option value="Ankou">Ankou</option>
-		<option value="Aviansie">Aviansie</option>
-		<option value="Black Demon">Black Demon</option>
-		<option value="Black Dragon">Black Dragon</option>
-		<option value="Bloodveld">Bloodveld</option>
-		<option value="Blue Dragon">Blue Dragon</option>
-		<option value="Brine Rat">Brine Rat</option>
-		<option value="Cave Horror">Cave Horror</option>
-		<option value="Cave Kraken">Cave Kraken</option>
-		<option value="Dagannoth">Dagannoth</option>
-		<option value="Dark Beast">Dark Beast</option>
-		<option value="Dust Devil">Dust Devil</option>
-		<option value="Elves">Elves</option>
-		<option value="Fire Giant">Fire Giant</option>
-		<option value="Gargoyle">Gargoyle</option>
-		<option value="Greater Demon">Greater Demon</option>
-		<option value="Hellhound">Hellhound</option>
-		<option value="Iron Dragon">Iron Dragon</option>
-		<option value="Kalphite">Kalphite</option>
-		<option value="Kurask">Kurask</option>
-		<option value="Lizardmen">Lizardmen</option>
-		<option value="Mithril Dragon">Mithril Dragon</option>
-		<option value="Mutated Zygomite">Mutated Zygomite</option>
-		<option value="Nechryael">Nechryael</option>
-		<option value="Red Dragon">Red Dragon</option>
-		<option value="Scabarites">Scabarites</option>
-		<option value="Skeletal Wyvern">Skeletal Wyvern</option>
-		<option value="Smoke Devil">Smoke Devil</option>
-		<option value="Spiritual Creatures">Spiritual Creatures</option>
-		<option value="Steel Dragon">Steel Dragon</option>
-		<option value="Suqah">Suqah</option>
-		<option value="Troll">Troll</option>
-		<option value="Turoth">Turoth</option>
-		<option value="TzHaar">TzHaar</option>
-	</select>
-	<br>
-	<br>
-	
-	Assigned Amount:
-	<input id="selectedTaskCount" type="number" name="quantity" min="0" max="299" value="0">
-	<br>
-	<br>
-
-	<button id="submitTaskButton" type="button" onclick="validate()">Submit Task</button>
-	
-</form>
-<br>
-<br>
-
-<b><u>Previously Entered Task:</u></b><br><br>
-
-<span id="assignedTaskCount">No Task Entered.</span> <span id="assignedTask"></span><br><br>
-
-From Slayer Master: <span id="slayerMaster">None Selected</span><br><br>
-
-<b><u>Slayer Master Task Count:</u></b><br><br>
-
-<style type="text/css">
- td {
-  padding: 0px 5px 0px 5px;
- }
-</style>
-
-<table>
-<tr><td>Turael:</td> <td align="right"><span id="turaelTaskCount">0</span></td></tr>
-<tr><td>Mazchna:</td> <td align="right"><span id="mazchnaTaskCount">0</span></td></tr>
-<tr><td>Vannaka:</td> <td align="right"><span id="vannakaTaskCount">0</span></td></tr>
-<tr><td>Chaeldar:</td> <td align="right"><span id="chaeldarTaskCount">0</span></td></tr>
-<tr><td>Nieve/Steve:</td> <td align="right"><span id="nievesteveTaskCount">0</span></td></tr>
-<tr><td>Duradel:</td> <td align="right"><span id="duradelTaskCount">0</span></td></tr>
-</table>
-<br>
-
-<b><u>Slayer Monster Task/Kill Count</u></b><br><br>
-
-<table>
-<tr><td>Total Task Count:</td> <td align="right"><span id="totalTaskCount">0</span></td></span></tr>
-<tr><td>Total Kill Count:</td> <td align="right"><span id="totalKillCount">0</span></td></tr>
-</table>
-<table>
-<br>
-
-<tr><th align="left"><u>Monster</u></th><th><u>Count</u></th></tr>
+		<button onclick="clickObjectClick(1)">Gather Space Dust</button>	
+<table>		
+<tr><th align="left"><u>Stats</u></th><th></th></tr>		
+<tr><td>Click Income:</td> <td align="right"><span id="clickObjectClickIncome">0</span></td></tr>
+<tr><td>Click Income Per Solar Mass:</td> <td align="right"><span id="clickObjectClickIncomePerSolarMass">0</span></td></tr>
+<tr><td>Click Income Upgrade Level:</td> <td align="right"><span id="clickObjectClickIncomeUpgradeLevel">0 </span></td></tr>
+<tr><td>Click Income Upgrade Cost:</td> <td align="right"><span id="clickObjectClickIncomeUpgradeCost">0</span></td></tr>
+<tr><td>Click Income Upgrade Cost Multiplier</td> <td align="right"><span id="clickObjectClickIncomeUpgradeCostMultiplier">0</span></td></tr>
+<tr><td>Solar Mass:</td> <td align="right"><span id="clickObjectSolarMass">0</span></td></tr>
+<tr><td>Solar Mass Upgrade Cost:</td> <td align="right"><span id="clickObjectSolarMassUpgradeCost">0 </span></td></tr>
+<tr><td>Solar Mass Upgrade Cost Multiplier:</td> <td align="right"><span id="clickObjectSolarMassUpgradeCostMultiplier">0</span></td></tr>
 <tr><td></td></tr>
+<tr><td>Dust Income Per Second:</td> <td align="right"><span id="clickObjectDustIncomePerSecond">0 </span></td></tr>
+<tr><td>Dust Income Per Solar Mass:</td> <td align="right"><span id="clickObjectDustIncomePerSolarMass">0</span></td></tr>
 <tr><td></td></tr>
-<tr><td>Aberrant Spectre Task Count:</td> <td align="right"><span id="aberrantspectreTaskCount">0</span></td></tr>
-<tr><td>Aberrant Spectre Kill Count:</td> <td align="right"><span id="aberrantspectreKillCount">0</span></td></tr>
-<tr><td>Abyssal Demon Task Count:</td> <td align="right"><span id="abyssaldemonTaskCount">0</span></td></tr>
-<tr><td>Abyssal Demon Kill Count:</td> <td align="right"><span id="abyssaldemonKillCount">0</span></td></tr>
-<tr><td>Ankou Task Count:</td> <td align="right"><span id="ankouTaskCount">0</span></td></tr>
-<tr><td>Ankou Kill Count:</td> <td align="right"><span id="ankouKillCount">0</span></td></tr>
-<tr><td>Aviansie Task Count:</td> <td align="right"><span id="aviansieTaskCount">0</span></td></tr>
-<tr><td>Aviansie Kill Count:</td> <td align="right"><span id="aviansieKillCount">0</span></td></tr>
-<tr><td>Black Demon Task Count:</td> <td align="right"><span id="blackdemonTaskCount">0</span></td></tr>
-<tr><td>Black Demon Kill Count:</td> <td align="right"><span id="blackdemonKillCount">0</span></td></tr>
-<tr><td>Black Dragon Task Count:</td> <td align="right"><span id="blackdragonTaskCount">0</span></td></tr>
-<tr><td>Black Dragon Kill Count:</td> <td align="right"><span id="blackdragonKillCount">0</span></td></tr>
-<tr><td>Bloodveld Task Count:</td> <td align="right"><span id="bloodveldTaskCount">0</span></td></tr>
-<tr><td>Bloodveld Kill Count:</td> <td align="right"><span id="bloodveldKillCount">0</span></td></tr>
-<tr><td>Blue Dragon Task Count:</td> <td align="right"><span id="bluedragonTaskCount">0</span></td></tr>
-<tr><td>Blue Dragon Kill Count:</td> <td align="right"><span id="bluedragonKillCount">0</span></td></tr>
-<tr><td>Brine Rat Task Count:</td> <td align="right"><span id="brineratTaskCount">0</span></td></tr>
-<tr><td>Brine Rat Kill Count:</td> <td align="right"><span id="brineratKillCount">0</span></td></tr>
-<tr><td>Cave Horror Task Count:</td> <td align="right"><span id="cavehorrorTaskCount">0</span></td></tr>
-<tr><td>Cave Horror Kill Count:</td> <td align="right"><span id="cavehorrorKillCount">0</span></td></tr>
-<tr><td>Cave Kraken Task Count:</td> <td align="right"><span id="cavekrakenTaskCount">0</span></td></tr>
-<tr><td>Cave Kraken Kill Count:</td> <td align="right"><span id="cavekrakenKillCount">0</span></td></tr>
-<tr><td>Dagannoth Task Count:</td> <td align="right"><span id="dagannothTaskCount">0</span></td></tr>
-<tr><td>Dagannoth Kill Count:</td> <td align="right"><span id="dagannothKillCount">0</span></td></tr>
-<tr><td>Dark Beast Task Count:</td> <td align="right"><span id="darkbeastTaskCount">0</span></td></tr>
-<tr><td>Dark Beast Kill Count:</td> <td align="right"><span id="darkbeastKillCount">0</span></td></tr>
-<tr><td>Dust Devil Task Count:</td> <td align="right"><span id="dustdevilTaskCount">0</span></td></tr>
-<tr><td>Dust Devil Kill Count:</td> <td align="right"><span id="dustdevilKillCount">0</span></td></tr>
-<tr><td>Elves Task Count:</td> <td align="right"><span id="elvesTaskCount">0</span></td></tr>
-<tr><td>Elves Kill Count:</td> <td align="right"><span id="elvesKillCount">0</span></td></tr>
-<tr><td>Fire Giant Task Count:</td> <td align="right"><span id="firegiantTaskCount">0</span></td></tr>
-<tr><td>Fire Giant Kill Count:</td> <td align="right"><span id="firegiantKillCount">0</span></td></tr>
-<tr><td>Gargoyle Task Count:</td> <td align="right"><span id="gargoyleTaskCount">0</span></td></tr>
-<tr><td>Gargoyle Kill Count:</td> <td align="right"><span id="gargoyleKillCount">0</span></td></tr>
-<tr><td>Greater Demon Task Count:</td> <td align="right"><span id="greaterdemonTaskCount">0</span></td></tr>
-<tr><td>Greater Demon Kill Count:</td> <td align="right"><span id="greaterdemonKillCount">0</span></td></tr>
-<tr><td>Hellhound Task Count:</td> <td align="right"><span id="hellhoundTaskCount">0</span></td></tr>
-<tr><td>Hellhound Kill Count:</td> <td align="right"><span id="hellhoundKillCount">0</span></td></tr>
-<tr><td>Iron Dragon Task Count:</td> <td align="right"><span id="irondragonTaskCount">0</span></td></tr>
-<tr><td>Iron Dragon Kill Count:</td> <td align="right"><span id="irondragonKillCount">0</span></td></tr>
-<tr><td>Kalphite Task Count:</td> <td align="right"><span id="kalphiteTaskCount">0</span></td></tr>
-<tr><td>Kalphite Kill Count:</td> <td align="right"><span id="kalphiteKillCount">0</span></td></tr>
-<tr><td>Kurask Task Count:</td> <td align="right"><span id="kuraskTaskCount">0</span></td></tr>
-<tr><td>Kurask Kill Count:</td> <td align="right"><span id="kuraskKillCount">0</span></td></tr>
-<tr><td>Lizardmen Task Count:</td> <td align="right"><span id="lizardmenTaskCount">0</span></td></tr>
-<tr><td>Lizardmen Kill Count:</td> <td align="right"><span id="lizardmenKillCount">0</span></td></tr>
-<tr><td>Mithril Dragon Task Count:</td> <td align="right"><span id="mithrildragonTaskCount">0</span></td></tr>
-<tr><td>Mithril Dragon Kill Count:</td> <td align="right"><span id="mithrildragonKillCount">0</span></td></tr>
-<tr><td>Mutated Zygomite Task Count:</td> <td align="right"><span id="mutatedzygomiteTaskCount">0</td></span></tr>
-<tr><td>Mutated Zygomite Kill Count:</td> <td align="right"><span id="mutatedzygomiteKillCount">0</span></td></tr>
-<tr><td>Nechryael Task Count:</td> <td align="right"><span id="nechryaelTaskCount">0</span></td></tr>
-<tr><td>Nechryael Kill Count:</td> <td align="right"><span id="nechryaelKillCount">0</span></td></tr>
-<tr><td>Red Dragon Task Count:</td> <td align="right"><span id="reddragonTaskCount">0</span></td></tr>
-<tr><td>Red Dragon Kill Count:</td> <td align="right"><span id="reddragonKillCount">0</span></td></tr>
-<tr><td>Scabarites Task Count:</td> <td align="right"><span id="scabaritesTaskCount">0</span></td></tr>
-<tr><td>Scabarites Kill Count:</td> <td align="right"><span id="scabaritesKillCount">0</span></td></tr>
-<tr><td>Skeletal Wyvern Task Count:</td> <td align="right"><span id="skeletalwyvernTaskCount">0</span></td></tr>
-<tr><td>Skeletal Wyvern Kill Count:</td> <td align="right"><span id="skeletalwyvernKillCount">0</span></td></tr>
-<tr><td>Smoke Devil Task Count:</td> <td align="right"><span id="smokedevilTaskCount">0</span></td></tr>
-<tr><td>Smoke Devil Kill Count:</td> <td align="right"><span id="smokedevilKillCount">0</span></td></tr>
-<tr><td>Spiritual Creatures Task Count:</td> <td align="right"><span id="spiritualcreaturesTaskCount">0</span></td></tr>
-<tr><td>Spiritual Creatures Kill Count:</td> <td align="right"><span id="spiritualcreaturesKillCount">0</span></td></tr>
-<tr><td>Steel Dragon Task Count:</td> <td align="right"><span id="steeldragonTaskCount">0</span></td></tr>
-<tr><td>Steel Dragon Kill Count:</td> <td align="right"><span id="steeldragonKillCount">0</span></td></tr>
-<tr><td>Suqah Task Count:</td> <td align="right"><span id="suqahTaskCount">0</span></td></tr>
-<tr><td>Suqah Kill Count:</td> <td align="right"><span id="suqahKillCount">0</span></td></tr>
-<tr><td>Troll Task Count:</td> <td align="right"><span id="trollTaskCount">0</span></td></tr>
-<tr><td>Troll Kill Count:</td> <td align="right"><span id="trollKillCount">0</span></td></tr>
-<tr><td>Turoth Task Count:</td> <td align="right"><span id="turothTaskCount">0</span></td></tr>
-<tr><td>Turoth Kill Count:</td> <td align="right"><span id="turothKillCount">0</span></td></tr>
-<tr><td>TzHaar Task Count:</td> <td align="right"><span id="tzhaarTaskCount">0</span></td></tr>
-<tr><td>TzHaar Kill Count:</td> <td align="right"><span id="tzhaarKillCount">0</span></td></tr>
+<tr><td>Star Formed:</td> <td align="right"><span id="clickObjectStarFormed">0 </span></td></tr>
+<tr><td>Star Formation Dust Required:</td> <td align="right"><span id="clickObjectStarFormationDustRequired">0</span></td></tr>
+<tr><td>Black Hole Formed:</td> <td align="right"><span id="clickObjectBlackHoleFormed">0 </span></td></tr>
+<tr><td>Black Hole Formation Dust Required:</td> <td align="right"><span id="clickObjectBlackHoleFormationDustRequired">0</span></td></tr>
+<tr><td></td></tr>
+<tr><td>Current Dust:</td> <td align="right"><span id="currentDust">0 </span></td></tr>
+<tr><td>Lifetime Dust:</td> <td align="right"><span id="lifetimeDust">0</span></td></tr>
+<tr><td>Current Energy:</td> <td align="right"><span id="currentEnergy">0 </span></td></tr>
+<tr><td>Lifetime Energy:</td> <td align="right"><span id="lifetimeEnergy">0</span></td></tr>
+<tr><td>Lifetime Solar Mass:</td> <td align="right"><span id="lifetimeSolarMass">0 </span></td></tr>
+<tr><td>Current Clicks:</td> <td align="right"><span id="currentClicks">0</span></td></tr>
+<tr><td>Lifetime Clicks:</td> <td align="right"><span id="lifetimeClicks">0 </span></td></tr>
+<tr><td>Time Played This Realm:</td> <td align="right"><span id="timePlayedThisRealm">0</span></td></tr>
+<tr><td>Time Since Started Playing:</td> <td align="right"><span id="timeSinceStartedPlaying">0</span></td></tr>
+<tr><td>Upgrades Purchased:</td> <td align="right"><span id="upgradesPurchased">0 </span></td></tr>
+<tr><td>Formation Count:</td> <td align="right"><span id="formationCount">0</span></td></tr> 
 </table>
-<br><br><br>
-<button id="resetStatistics" type="button" onclick="reset_stats()">Reset</button><br><br>
-Warning: Once you click reset and refresh the page your statistics will all be set to 0.<br>THIS IS NOT REVERSABLE!
-<br><br>
-Total Visits:
-<img src="http://hitwebcounter.com/counter/counter.php?page=6473787&style=0007&nbdigits=5&type=page&initCount=0" title="url and counting visits" Alt="url and counting visits"   border="0" >
-</a><br>  
-Unique Visitors:
-<img src="http://hitwebcounter.com/counter/counter.php?page=6473791&style=0007&nbdigits=5&type=ip&initCount=0" title="url and counting visits" Alt="url and counting visits"   border="0" >
-</a>
-<br>
-
-             
-</center>                     
+</center>
+<script type="text/javascript" src="base.js"></script>
 </body>
+<script type="text/javascript" src="base.js"></script>
 </html>
+<script type="text/javascript" src="base.js"></script>
