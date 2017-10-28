@@ -1,46 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	<meta charset="UFT-8">
+	<title>Universe Idle</title>
+	<style type="text/css">
+		canvas{
+			border: 0px;
+			background-color: #343d46;  <!--sets background in canvas to background.jpg -->
+		}
+		body{
+			margin: 0px; <!-- body margin 0 removes gap between border and edge of inner window -->
+		}
+	</style>
 </head>
-<script type="text/javascript" src="base.js"></script>
-<body onLoad="load_game()">
-<script type="text/javascript" src="base.js"></script>
-<center>
-		<button onclick="clickObjectClick(1)">Gather Space Dust</button>	
-<table>		
-<tr><th align="left"><u>Stats</u></th><th></th></tr>		
-<tr><td>Click Income:</td> <td align="right"><span id="clickObjectClickIncome">0</span></td></tr>
-<tr><td>Click Income Per Solar Mass:</td> <td align="right"><span id="clickObjectClickIncomePerSolarMass">0</span></td></tr>
-<tr><td>Click Income Upgrade Level:</td> <td align="right"><span id="clickObjectClickIncomeUpgradeLevel">0 </span></td></tr>
-<tr><td>Click Income Upgrade Cost:</td> <td align="right"><span id="clickObjectClickIncomeUpgradeCost">0</span></td></tr>
-<tr><td>Click Income Upgrade Cost Multiplier</td> <td align="right"><span id="clickObjectClickIncomeUpgradeCostMultiplier">0</span></td></tr>
-<tr><td>Solar Mass:</td> <td align="right"><span id="clickObjectSolarMass">0</span></td></tr>
-<tr><td>Solar Mass Upgrade Cost:</td> <td align="right"><span id="clickObjectSolarMassUpgradeCost">0 </span></td></tr>
-<tr><td>Solar Mass Upgrade Cost Multiplier:</td> <td align="right"><span id="clickObjectSolarMassUpgradeCostMultiplier">0</span></td></tr>
-<tr><td></td></tr>
-<tr><td>Dust Income Per Second:</td> <td align="right"><span id="clickObjectDustIncomePerSecond">0 </span></td></tr>
-<tr><td>Dust Income Per Solar Mass:</td> <td align="right"><span id="clickObjectDustIncomePerSolarMass">0</span></td></tr>
-<tr><td></td></tr>
-<tr><td>Star Formed:</td> <td align="right"><span id="clickObjectStarFormed">0 </span></td></tr>
-<tr><td>Star Formation Dust Required:</td> <td align="right"><span id="clickObjectStarFormationDustRequired">0</span></td></tr>
-<tr><td>Black Hole Formed:</td> <td align="right"><span id="clickObjectBlackHoleFormed">0 </span></td></tr>
-<tr><td>Black Hole Formation Dust Required:</td> <td align="right"><span id="clickObjectBlackHoleFormationDustRequired">0</span></td></tr>
-<tr><td></td></tr>
-<tr><td>Current Dust:</td> <td align="right"><span id="currentDust">0 </span></td></tr>
-<tr><td>Lifetime Dust:</td> <td align="right"><span id="lifetimeDust">0</span></td></tr>
-<tr><td>Current Energy:</td> <td align="right"><span id="currentEnergy">0 </span></td></tr>
-<tr><td>Lifetime Energy:</td> <td align="right"><span id="lifetimeEnergy">0</span></td></tr>
-<tr><td>Lifetime Solar Mass:</td> <td align="right"><span id="lifetimeSolarMass">0 </span></td></tr>
-<tr><td>Current Clicks:</td> <td align="right"><span id="currentClicks">0</span></td></tr>
-<tr><td>Lifetime Clicks:</td> <td align="right"><span id="lifetimeClicks">0 </span></td></tr>
-<tr><td>Time Played This Realm:</td> <td align="right"><span id="timePlayedThisRealm">0</span></td></tr>
-<tr><td>Time Since Started Playing:</td> <td align="right"><span id="timeSinceStartedPlaying">0</span></td></tr>
-<tr><td>Upgrades Purchased:</td> <td align="right"><span id="upgradesPurchased">0 </span></td></tr>
-<tr><td>Formation Count:</td> <td align="right"><span id="formationCount">0</span></td></tr> 
-</table>
-</center>
-<script type="text/javascript" src="base.js"></script>
+<body style="overflow: hidden"> <!-- gets rid of vertical/horizontal scrollbars -->
+	<canvas></canvas>
+	<script src="canvas1.js"></script>
 </body>
-<script type="text/javascript" src="base.js"></script>
 </html>
-<script type="text/javascript" src="base.js"></script>
