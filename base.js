@@ -65,9 +65,7 @@ function Asteroid(x, y, dx, dy, radius, velocity) {
 		this.draw(lastPoint);
 	};
 	this.draw = lastPoint => {
-		
-	var oCanvasoContext =
-	var 
+
 	c.beginPath();
 	//c.globalAlpha = 1;
 	c.strokeStyle = this.color;
