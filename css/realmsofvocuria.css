@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+}
+
+#game-window {
+    max-width: 1500px;
+    max-height: 800px;
+}
+
+#wrap {
+    width: 100%;
+    height: 100%;
+    max-width: 1500px;
+    max-height: 800px;
+    position: absolute;
+}
+
+#left-panel {
+    position: absolute;
+    background-color: green;
+    width: 25%;
+    height: 100%;
+    overflow: hidden;
+}   
+
+#middle-panel {
+    position: absolute;
+    background-color: lightblue;
+    width: 50%;
+    height: 100%;
+    left: 25%;
+    overflow: hidden;
+}   
+  
+#right-panel {
+    position: absolute;
+    background-color: red;
+    width: 25%;
+    height: 100%;
+    right: 0;
+    overflow: hidden;
+}       
+
+
+#middle-panel-top {
+    position: absolute;
+    background-color: red;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+
+}
+
+#middle-panel-bottom {
+    position: absolute;
+    background-color: green;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+}
+
+/* UI */
+
+.menu-button {
+    width: 211px;
+    height: 46px;
+    cursor: pointer;
+    background: url(/images/ui/menu_button_background.png);
+    position: relative;
+
+}
