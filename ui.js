@@ -68,7 +68,7 @@ function leftSectionContainer() {
     dungeonButton.buttonMode = true;
     dungeonButton.interactive = true;
     dungeonButton
-        .on('mousedown', function() {
+        .on('pointerdown', function() {
 
             if (game.ui.menu.menuCurrentlyOpen == true) {
                 gameScene.getChildByName("rightSection").removeChild(game.ui.menu.menuOpen);
@@ -367,7 +367,7 @@ function openDungeonUI() {
     startButton.buttonMode = true;
     startButton.interactive = true;
     startButton
-        .on('mousedown', function() {
+        .on('pointerdown', function() {
             rightSection.removeChild(dungeonUI);
             game.ui.menu.menuCurrentlyOpen = false;
             game.ui.menu.menuOpen = undefined;
